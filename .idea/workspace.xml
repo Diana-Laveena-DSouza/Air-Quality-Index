@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f9b5bad-41f1-4c53-889e-6dbcde32bcad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/artifacts/model_dir/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/model_dir/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artifacts/over_regressors_scores_dir/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/AirQuality_DetailProject.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/AirQuality_DetailProject.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/HLD_AirQuality_v1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/docs/HLD_AirQuality_v1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dvc.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dvc.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/running_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/running_logs.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/params.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/params.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scores.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/step_05_model_training_and_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/step_05_model_training_and_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/scores.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

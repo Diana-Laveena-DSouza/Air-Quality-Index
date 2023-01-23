@@ -1,65 +1,19 @@
-[2023-01-23 14:56:23,632: INFO: step_01_collect_data]: 
+[2023-01-23 15:05:00,000: INFO: step_01_collect_data]: 
 ********************
-[2023-01-23 14:56:23,632: INFO: step_01_collect_data]: >>>>> stage GET DATA started <<<<<
-[2023-01-23 14:56:23,637: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 14:56:25,314: INFO: common]: created directory at: artifacts\data_dir
-[2023-01-23 14:56:25,379: INFO: step_01_collect_data]: Process Data is saved at: artifacts\data_dir\data.csv
-[2023-01-23 14:56:25,380: INFO: step_01_collect_data]: >>>>> stage GET DATA completed!<<<<<
+[2023-01-23 15:05:00,000: INFO: step_01_collect_data]: >>>>> stage GET DATA started <<<<<
+[2023-01-23 15:05:00,004: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:05:01,498: INFO: common]: created directory at: artifacts\data_dir
+[2023-01-23 15:05:01,549: INFO: step_01_collect_data]: Process Data is saved at: artifacts\data_dir\data.csv
+[2023-01-23 15:05:01,549: INFO: step_01_collect_data]: >>>>> stage GET DATA completed!<<<<<
 
-[2023-01-23 14:56:30,238: INFO: step_03_processed_data]: 
+[2023-01-23 15:05:05,943: INFO: step_02_eda]: 
 ********************
-[2023-01-23 14:56:30,241: INFO: step_03_processed_data]: >>>>> stage PROCESS DATA started <<<<<
-[2023-01-23 14:56:30,246: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 14:56:30,246: INFO: common]: created directory at: artifacts\data_dir
-[2023-01-23 14:56:30,246: INFO: common]: created directory at: artifacts\process_local_dir
-[2023-01-23 14:56:30,247: INFO: common]: created directory at: artifacts\model_dir
-[2023-01-23 14:56:30,277: INFO: step_03_processed_data]:             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
-0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
-1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
-2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
-3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
-4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
-
-[5 rows x 14 columns]
-[2023-01-23 14:56:30,347: INFO: step_03_processed_data]: After removing rows having more than 30% missing values: 
-             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
-0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
-1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
-2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
-3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
-4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
-
-[5 rows x 14 columns]
-[2023-01-23 14:56:30,347: INFO: step_03_processed_data]: Number of records in new data is saved at: 4012
-[2023-01-23 14:56:30,347: INFO: step_03_processed_data]:             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
-0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
-1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
-2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
-3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
-4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
-
-[5 rows x 14 columns]
-[2023-01-23 14:56:30,391: INFO: step_03_processed_data]: checking skewness of columns after handling outliers
-
-[2023-01-23 14:56:30,393: INFO: step_03_processed_data]: NO2, ' : ', 0.045089271644779036
-[2023-01-23 14:56:30,393: INFO: step_03_processed_data]: SO2, ' : ', 0.9207220896239287
-[2023-01-23 14:56:30,394: INFO: step_03_processed_data]: Ozone, ' : ', -0.010889724808069585
-[2023-01-23 14:56:30,394: INFO: step_03_processed_data]: PM10, ' : ', -0.016410702106949327
-[2023-01-23 14:56:30,394: INFO: step_03_processed_data]: NH3, ' : ', 0.43949117933899534
-[2023-01-23 14:56:30,395: INFO: step_03_processed_data]: PM2.5, ' : ', 0.009717247371182923
-[2023-01-23 14:56:30,395: INFO: step_03_processed_data]: CO, ' : ', -0.1446922898213153
-[2023-01-23 14:56:32,432: INFO: step_03_processed_data]: processed data is saved at: artifacts\process_local_dir\processed_data.csv
-[2023-01-23 14:56:32,432: INFO: step_03_processed_data]: One Hot Encoding Model is saved at: artifacts\model_dir\one_hot_model.pkl
-[2023-01-23 14:56:32,433: INFO: step_03_processed_data]: >>>>> stage PROCESS DATA completed!<<<<<
-
-[2023-01-23 14:56:36,153: INFO: step_02_eda]: 
-********************
-[2023-01-23 14:56:36,153: INFO: step_02_eda]: >>>>> stage EDA ANALYSIS started <<<<<
-[2023-01-23 14:56:36,156: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 14:56:36,157: INFO: common]: yaml file: params.yaml loaded successfully
-[2023-01-23 14:56:36,158: INFO: common]: created directory at: artifacts\data_dir
-[2023-01-23 14:56:36,158: INFO: common]: created directory at: artifacts\eda_dir
-[2023-01-23 14:56:36,168: INFO: step_02_eda]: Data Types:
+[2023-01-23 15:05:05,943: INFO: step_02_eda]: >>>>> stage EDA ANALYSIS started <<<<<
+[2023-01-23 15:05:05,950: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:05:05,952: INFO: common]: yaml file: params.yaml loaded successfully
+[2023-01-23 15:05:05,952: INFO: common]: created directory at: artifacts\data_dir
+[2023-01-23 15:05:05,953: INFO: common]: created directory at: artifacts\eda_dir
+[2023-01-23 15:05:05,969: INFO: step_02_eda]: Data Types:
  State          object
 City           object
 Station        object
@@ -75,51 +29,97 @@ NH3           float64
 AQI             int64
 AQI_Bucket     object
 dtype: object
-[2023-01-23 14:56:36,168: INFO: step_02_eda]: Shape of the Data:
+[2023-01-23 15:05:05,969: INFO: step_02_eda]: Shape of the Data:
  (4012, 14)
-[2023-01-23 14:56:38,116: INFO: step_02_eda]: Checking the Skewness of Columns: 1.6132589996768525
-[2023-01-23 14:56:38,116: INFO: step_02_eda]: Checking the Skewness of Columns: 0.8854423253323825
-[2023-01-23 14:56:38,116: INFO: step_02_eda]: Checking the Skewness of Columns: 1.5500504920819753
-[2023-01-23 14:56:38,116: INFO: step_02_eda]: Checking the Skewness of Columns: 1.0297095671981558
-[2023-01-23 14:56:38,117: INFO: step_02_eda]: Checking the Skewness of Columns: 3.1975050071459146
-[2023-01-23 14:56:38,117: INFO: step_02_eda]: Checking the Skewness of Columns: 3.8948719703995764
-[2023-01-23 14:56:38,117: INFO: step_02_eda]: Checking the Skewness of Columns: 0.49322134921469557
-[2023-01-23 14:56:38,117: INFO: step_02_eda]: Checking the Skewness of Columns: 1.201378607815606
-[2023-01-23 14:58:41,639: INFO: step_02_eda]: >>>>> stage EDA ANALYSIS completed!<<<<<
+[2023-01-23 15:05:10,477: INFO: step_02_eda]: Checking the Skewness of Columns: 1.6132589996768525
+[2023-01-23 15:05:10,478: INFO: step_02_eda]: Checking the Skewness of Columns: 1.0297095671981558
+[2023-01-23 15:05:10,478: INFO: step_02_eda]: Checking the Skewness of Columns: 0.8854423253323825
+[2023-01-23 15:05:10,479: INFO: step_02_eda]: Checking the Skewness of Columns: 0.49322134921469557
+[2023-01-23 15:05:10,480: INFO: step_02_eda]: Checking the Skewness of Columns: 1.5500504920819753
+[2023-01-23 15:05:10,480: INFO: step_02_eda]: Checking the Skewness of Columns: 3.8948719703995764
+[2023-01-23 15:05:10,481: INFO: step_02_eda]: Checking the Skewness of Columns: 1.201378607815606
+[2023-01-23 15:05:10,481: INFO: step_02_eda]: Checking the Skewness of Columns: 3.1975050071459146
+[2023-01-23 15:06:04,649: INFO: step_02_eda]: >>>>> stage EDA ANALYSIS completed!<<<<<
 
-[2023-01-23 14:58:47,508: INFO: step_04_train_test_split]: 
+[2023-01-23 15:06:10,909: INFO: step_03_processed_data]: 
 ********************
-[2023-01-23 14:58:47,508: INFO: step_04_train_test_split]: >>>>> stage TRAIN TEST SPLIT started <<<<<
-[2023-01-23 14:58:47,518: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 14:58:47,521: INFO: common]: yaml file: params.yaml loaded successfully
-[2023-01-23 14:58:47,521: INFO: common]: created directory at: artifacts\split_data_dir
-[2023-01-23 14:58:47,522: INFO: common]: created directory at: artifacts\process_local_dir
-[2023-01-23 14:58:47,681: INFO: step_04_train_test_split]: x_train_shape: (3410, 210), x_test_shape: (602, 210), y_train_shape: (3410,), y_test_shape: (602,)
-[2023-01-23 14:58:47,744: INFO: step_04_train_test_split]: x_train_over_shape: (6276, 210), y_train_over_shape: (6276,)
-[2023-01-23 14:58:49,703: INFO: step_04_train_test_split]: Train Test Split Files are saved at: artifacts\split_data_dir\x_train.csv, artifacts\split_data_dir\y_train.csv, artifacts\split_data_dir\x_test.csv, artifacts\split_data_dir\y_test.csv
-[2023-01-23 14:58:49,703: INFO: step_04_train_test_split]: Oversampling Files are saved at: artifacts\split_data_dir\x_train_over.csv, artifacts\split_data_dir\y_train_over.csv
-[2023-01-23 14:58:49,710: INFO: step_04_train_test_split]: >>>>> stage TRAIN TEST SPLIT completed!<<<<<
+[2023-01-23 15:06:10,909: INFO: step_03_processed_data]: >>>>> stage PROCESS DATA started <<<<<
+[2023-01-23 15:06:10,913: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:06:10,914: INFO: common]: created directory at: artifacts\data_dir
+[2023-01-23 15:06:10,914: INFO: common]: created directory at: artifacts\process_local_dir
+[2023-01-23 15:06:10,914: INFO: common]: created directory at: artifacts\model_dir
+[2023-01-23 15:06:10,923: INFO: step_03_processed_data]:             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
+0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
+1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
+2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
+3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
+4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
 
-[2023-01-23 14:58:53,202: INFO: step_05_model_training_and_selection]: 
-********************
-[2023-01-23 14:58:53,202: INFO: step_05_model_training_and_selection]: >>>>> stage MODEL TRAINING started <<<<<
-[2023-01-23 14:58:53,207: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 14:58:53,208: INFO: common]: yaml file: params.yaml loaded successfully
-[2023-01-23 14:58:53,209: INFO: common]: created directory at: artifacts\split_data_dir
-[2023-01-23 14:58:53,209: INFO: common]: created directory at: artifacts\model_dir
-[2023-01-23 14:58:53,210: INFO: common]: created directory at: artifacts\over_regressors_scores_dir
-[2023-01-23 15:00:27,765: INFO: step_05_model_training_and_selection]: Results before oversampling are saved at: artifacts\over_regressors_scores_dir\classifier_before_oversample.csv, artifacts\over_regressors_scores_dir\regressor_before_oversample.csv
-[2023-01-23 15:00:27,766: INFO: step_05_model_training_and_selection]: Results after oversampling are saved at: artifacts\over_regressors_scores_dir\classifier_after_oversample.csv, artifacts\over_regressors_scores_dir\regressor_after_oversample.csv
-[2023-01-23 15:00:27,766: INFO: step_05_model_training_and_selection]: Model is saved at: artifacts\model_dir\model.pkl
-[2023-01-23 15:00:27,779: INFO: step_05_model_training_and_selection]: >>>>> stage MODEL TRAINING completed!<<<<<
+[5 rows x 14 columns]
+[2023-01-23 15:06:10,950: INFO: step_03_processed_data]: After removing rows having more than 30% missing values: 
+             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
+0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
+1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
+2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
+3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
+4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
 
-[2023-01-23 15:00:31,020: INFO: step_06_evaluate_model]: 
+[5 rows x 14 columns]
+[2023-01-23 15:06:10,950: INFO: step_03_processed_data]: Number of records in new data is saved at: 4012
+[2023-01-23 15:06:10,950: INFO: step_03_processed_data]:             State       City                         Station   From Date           To Date  PM2.5  ...    SO2    CO  Ozone    NH3  AQI    AQI_Bucket
+0  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  01-01-2023  02-01-2023 00:00  41.58  ...  11.52  0.58  29.93  16.43   79  Satisfactory
+1  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  02-01-2023  03-01-2023 00:00  50.13  ...  10.69  0.63  31.77  15.68   84  Satisfactory
+2  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  03-01-2023  04-01-2023 00:00  49.76  ...   4.67  0.61  33.05  14.49   83  Satisfactory
+3  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  04-01-2023  05-01-2023 00:00  52.78  ...   8.59  0.57  45.77  16.05   88  Satisfactory
+4  Andhra Pradesh  Amaravati  Secretariat, Amaravati - APPCB  05-01-2023  06-01-2023 00:00  80.26  ...   9.16  0.77  50.11  14.42  168      Moderate
+
+[5 rows x 14 columns]
+[2023-01-23 15:06:10,970: INFO: step_03_processed_data]: checking skewness of columns after handling outliers
+
+[2023-01-23 15:06:10,971: INFO: step_03_processed_data]: PM10, ' : ', -0.016410702106949327
+[2023-01-23 15:06:10,971: INFO: step_03_processed_data]: Ozone, ' : ', -0.010889724808069585
+[2023-01-23 15:06:10,971: INFO: step_03_processed_data]: SO2, ' : ', 0.9207220896239287
+[2023-01-23 15:06:10,971: INFO: step_03_processed_data]: NH3, ' : ', 0.43949117933899534
+[2023-01-23 15:06:10,971: INFO: step_03_processed_data]: PM2.5, ' : ', 0.009717247371182923
+[2023-01-23 15:06:10,972: INFO: step_03_processed_data]: CO, ' : ', -0.1446922898213153
+[2023-01-23 15:06:10,972: INFO: step_03_processed_data]: NO2, ' : ', 0.045089271644779036
+[2023-01-23 15:06:11,957: INFO: step_03_processed_data]: processed data is saved at: artifacts\process_local_dir\processed_data.csv
+[2023-01-23 15:06:11,957: INFO: step_03_processed_data]: One Hot Encoding Model is saved at: artifacts\model_dir\one_hot_model.pkl
+[2023-01-23 15:06:11,959: INFO: step_03_processed_data]: >>>>> stage PROCESS DATA completed!<<<<<
+
+[2023-01-23 15:06:15,170: INFO: step_04_train_test_split]: 
 ********************
-[2023-01-23 15:00:31,020: INFO: step_06_evaluate_model]: >>>>> stage MODEL EVALUATION started <<<<<
-[2023-01-23 15:00:31,028: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2023-01-23 15:00:31,030: INFO: common]: yaml file: params.yaml loaded successfully
-[2023-01-23 15:00:31,030: INFO: common]: created directory at: artifacts\split_data_dir
-[2023-01-23 15:00:31,030: INFO: common]: created directory at: artifacts\model_dir
-[2023-01-23 15:00:31,222: INFO: common]: json file saved at: scores.json
-[2023-01-23 15:00:31,223: INFO: step_06_evaluate_model]: >>>>> stage MODEL EVALUATION completed!<<<<<
+[2023-01-23 15:06:15,170: INFO: step_04_train_test_split]: >>>>> stage TRAIN TEST SPLIT started <<<<<
+[2023-01-23 15:06:15,173: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:06:15,174: INFO: common]: yaml file: params.yaml loaded successfully
+[2023-01-23 15:06:15,174: INFO: common]: created directory at: artifacts\split_data_dir
+[2023-01-23 15:06:15,174: INFO: common]: created directory at: artifacts\process_local_dir
+[2023-01-23 15:06:15,261: INFO: step_04_train_test_split]: x_train_shape: (3410, 210), x_test_shape: (602, 210), y_train_shape: (3410,), y_test_shape: (602,)
+[2023-01-23 15:06:15,302: INFO: step_04_train_test_split]: x_train_over_shape: (6276, 210), y_train_over_shape: (6276,)
+[2023-01-23 15:06:16,326: INFO: step_04_train_test_split]: Train Test Split Files are saved at: artifacts\split_data_dir\x_train.csv, artifacts\split_data_dir\y_train.csv, artifacts\split_data_dir\x_test.csv, artifacts\split_data_dir\y_test.csv
+[2023-01-23 15:06:16,326: INFO: step_04_train_test_split]: Oversampling Files are saved at: artifacts\split_data_dir\x_train_over.csv, artifacts\split_data_dir\y_train_over.csv
+[2023-01-23 15:06:16,329: INFO: step_04_train_test_split]: >>>>> stage TRAIN TEST SPLIT completed!<<<<<
+
+[2023-01-23 15:06:19,704: INFO: step_05_model_training_and_selection]: 
+********************
+[2023-01-23 15:06:19,704: INFO: step_05_model_training_and_selection]: >>>>> stage MODEL TRAINING started <<<<<
+[2023-01-23 15:06:19,711: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:06:19,713: INFO: common]: yaml file: params.yaml loaded successfully
+[2023-01-23 15:06:19,713: INFO: common]: created directory at: artifacts\split_data_dir
+[2023-01-23 15:06:19,713: INFO: common]: created directory at: artifacts\model_dir
+[2023-01-23 15:06:19,714: INFO: common]: created directory at: artifacts\over_regressors_scores_dir
+[2023-01-23 15:07:55,076: INFO: step_05_model_training_and_selection]: Results before oversampling are saved at: artifacts\over_regressors_scores_dir\classifier_before_oversample.csv, artifacts\over_regressors_scores_dir\regressor_before_oversample.csv
+[2023-01-23 15:07:55,077: INFO: step_05_model_training_and_selection]: Results after oversampling are saved at: artifacts\over_regressors_scores_dir\classifier_after_oversample.csv, artifacts\over_regressors_scores_dir\regressor_after_oversample.csv
+[2023-01-23 15:07:55,077: INFO: step_05_model_training_and_selection]: Model is saved at: artifacts\model_dir\model.pkl
+[2023-01-23 15:07:55,091: INFO: step_05_model_training_and_selection]: >>>>> stage MODEL TRAINING completed!<<<<<
+
+[2023-01-23 15:07:58,918: INFO: step_06_evaluate_model]: 
+********************
+[2023-01-23 15:07:58,918: INFO: step_06_evaluate_model]: >>>>> stage MODEL EVALUATION started <<<<<
+[2023-01-23 15:07:58,930: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-01-23 15:07:58,933: INFO: common]: yaml file: params.yaml loaded successfully
+[2023-01-23 15:07:58,933: INFO: common]: created directory at: artifacts\split_data_dir
+[2023-01-23 15:07:58,934: INFO: common]: created directory at: artifacts\model_dir
+[2023-01-23 15:07:59,216: INFO: common]: json file saved at: scores.json
+[2023-01-23 15:07:59,218: INFO: step_06_evaluate_model]: >>>>> stage MODEL EVALUATION completed!<<<<<
 
