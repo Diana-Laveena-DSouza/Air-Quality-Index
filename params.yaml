@@ -10,4 +10,4 @@ model_params:
     n_estimators: 150
     max_depth: 12
     min_samples_split: 3
-    max_features: 50
+    max_features: 150

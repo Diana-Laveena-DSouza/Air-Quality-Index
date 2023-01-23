@@ -33,14 +33,14 @@ stages:
       size: 679
     outs:
     - path: artifacts/eda_dir/AQI_impact.jpg
-      md5: 9ad7b9b59e4b42f199519717b3704f7d
-      size: 267243
+      md5: 66c556d8f3fd979dad6986dfaa97d163
+      size: 266675
     - path: artifacts/eda_dir/checking_outliers.jpg
-      md5: 962e2bb8c8fc6f03f7c824f533c836fa
-      size: 167998
+      md5: a0de60dd96665c52fde4f9fb5ba93165
+      size: 169345
     - path: artifacts/eda_dir/checking_pollutants_over_period.jpg
-      md5: 2f1e74fbdca650c37d2b998c2c40022a
-      size: 263943
+      md5: 8369c23cb7735fb1c72a7ef063583fce
+      size: 264764
     - path: artifacts/eda_dir/correlation_analysis.jpg
       md5: 99700b1f41dbf8b105f5d16b36f96424
       size: 127137
@@ -48,19 +48,19 @@ stages:
       md5: 0fb8a5ca028ad3f97875f61caf1c6302
       size: 41860
     - path: artifacts/eda_dir/data_distribution.jpg
-      md5: 3ca927317cc28232b5204d13d1718308
-      size: 239257
+      md5: 42b17b7b1ce550c5979c9dcbd42ce879
+      size: 239335
     - path: artifacts/eda_dir/descriptive_statistics.csv
       md5: 9f228c9600c7049da48fddcc72bb394c
       size: 725
     - path: artifacts/eda_dir/maximum_concentration.csv
-      md5: 09909f1bd1ddbd5ffa666b7fab7b9157
+      md5: 8988fa94c4208a955afe6d02106abcef
       size: 4139
     - path: artifacts/eda_dir/mean_concentration.csv
-      md5: 5b1d185a9fc21097c68c78e0f4e0dc6c
+      md5: 4eb1da2f4a1d60b19c26ffb484a14c90
       size: 9886
     - path: artifacts/eda_dir/minimum_concentration.csv
-      md5: 581388333d1ed03fdf8ec8d4c03b7086
+      md5: a44b68e82612f809a12b87dd26689e94
       size: 3855
     - path: artifacts/eda_dir/missing_cols_values.csv
       md5: 6970ee0a21bd2193b3fe3458c2880d46
@@ -91,16 +91,16 @@ stages:
       md5: a6649857e6a97b1212e0c6c08ababc22
       size: 4983
     - path: artifacts/process_local_dir/checking_outliers_after_handling.jpg
-      md5: 22d31fbb766c3fc7945b6006bba2bcf2
-      size: 158502
+      md5: 8550e008386d6099c3de2fe62359df29
+      size: 156127
     - path: artifacts/process_local_dir/processed_data.csv
-      md5: bbda5571517f8926fc3ba9e70f908312
+      md5: 6de0606563db8ca1fa3fbd3bab4ed4e1
       size: 4082636
   train_test_split:
     cmd: python scripts/step_04_train_test_split.py
     deps:
     - path: artifacts/process_local_dir/processed_data.csv
-      md5: bbda5571517f8926fc3ba9e70f908312
+      md5: 6de0606563db8ca1fa3fbd3bab4ed4e1
       size: 4082636
     - path: configs/config.yaml
       md5: e8e0e997c674c50db3da0656fa13382c
@@ -118,13 +118,13 @@ stages:
         train_test_split.TEST_SIZE: 0.15
     outs:
     - path: artifacts/split_data_dir/x_test.csv
-      md5: 86b6accde615d73be00230b91b233240
+      md5: 74c2b9f3c93fdbe12b2a1e1ee37f8559
       size: 571002
     - path: artifacts/split_data_dir/x_train.csv
-      md5: c749172bfda1978e9c231a155b8096c8
+      md5: 18c5908218365783b5fa0184e3b4dd8e
       size: 3208522
     - path: artifacts/split_data_dir/x_train_over.csv
-      md5: 9d9b50710a9954f40780814cd04a94c8
+      md5: 61069b71ea5029c73ce0d8895623e8ae
       size: 5901089
     - path: artifacts/split_data_dir/y_test.csv
       md5: a7cabf6a2bcd21670abc8f6b0576293d
@@ -139,13 +139,13 @@ stages:
     cmd: python scripts/step_05_model_training_and_selection.py
     deps:
     - path: artifacts/split_data_dir/x_test.csv
-      md5: 86b6accde615d73be00230b91b233240
+      md5: 74c2b9f3c93fdbe12b2a1e1ee37f8559
       size: 571002
     - path: artifacts/split_data_dir/x_train.csv
-      md5: c749172bfda1978e9c231a155b8096c8
+      md5: 18c5908218365783b5fa0184e3b4dd8e
       size: 3208522
     - path: artifacts/split_data_dir/x_train_over.csv
-      md5: 9d9b50710a9954f40780814cd04a94c8
+      md5: 61069b71ea5029c73ce0d8895623e8ae
       size: 5901089
     - path: artifacts/split_data_dir/y_test.csv
       md5: a7cabf6a2bcd21670abc8f6b0576293d
@@ -168,33 +168,33 @@ stages:
     params:
       params.yaml:
         model_params.max_depth: 12
-        model_params.max_features: 50
+        model_params.max_features: 150
         model_params.min_samples_split: 3
         model_params.n_estimators: 150
     outs:
     - path: artifacts/model_dir/model.pkl
-      md5: e74b47e3a208cb1fb71fdd2714527a72
-      size: 13243932
+      md5: 490167b360cb93fbf5b6f5faf700e760
+      size: 17141020
     - path: artifacts/over_regressors_scores_dir/classifier_after_oversample.csv
-      md5: db15a62a5074b67b489e55a2deae81d1
+      md5: 91a893bcc41a778d42ab867b21e7421f
       size: 585
     - path: artifacts/over_regressors_scores_dir/classifier_before_oversample.csv
-      md5: 697192a2e8359dc1f21cbc05e6207231
-      size: 589
+      md5: fe92b1c9236113e6115a70ecede9ca0c
+      size: 590
     - path: artifacts/over_regressors_scores_dir/regressor_after_oversample.csv
-      md5: d767e547e91ba47b28bf5fec34a8bf4c
-      size: 650
+      md5: 71c524126040d0e082a791d505f5e3eb
+      size: 646
     - path: artifacts/over_regressors_scores_dir/regressor_before_oversample.csv
-      md5: a554da5fa57c71b33a8c969a203070aa
+      md5: ad0b4f96b7544fcc4e702287e56107e0
       size: 653
   model_valuation:
     cmd: python scripts/step_06_evaluate_model.py
     deps:
     - path: artifacts/model_dir/model.pkl
-      md5: e74b47e3a208cb1fb71fdd2714527a72
-      size: 13243932
+      md5: 490167b360cb93fbf5b6f5faf700e760
+      size: 17141020
     - path: artifacts/split_data_dir/x_test.csv
-      md5: 86b6accde615d73be00230b91b233240
+      md5: 74c2b9f3c93fdbe12b2a1e1ee37f8559
       size: 571002
     - path: configs/config.yaml
       md5: e8e0e997c674c50db3da0656fa13382c
@@ -207,5 +207,5 @@ stages:
       size: 679
     outs:
     - path: scores.json
-      md5: 1290e0997cb6c576771f7f4e8436b29c
+      md5: 0a1cbeed39195c64ad4afd780a991f72
       size: 147
