@@ -1,0 +1,102 @@
+# add stages here 
+stages:
+
+  get_data:
+    cmd: python scripts/step_01_collect_data.py
+    deps:
+    - scripts/step_01_collect_data.py
+    - scripts/utils/common.py
+    - configs/config.yaml
+    outs:
+    - artifacts/data_dir/data.csv
+
+  eda_analysis:
+    cmd: python scripts/step_02_eda.py
+    deps:
+    - scripts/step_02_eda.py
+    - scripts/utils/common.py
+    - artifacts/data_dir/data.csv
+    - configs/config.yaml
+    outs:
+    - artifacts/eda_dir/missing_cols_values.csv
+    - artifacts/eda_dir/missing_rows_values.csv
+    - artifacts/eda_dir/descriptive_statistics.csv
+    - artifacts/eda_dir/data_distribution.jpg
+    - artifacts/eda_dir/checking_outliers.jpg
+    - artifacts/eda_dir/correlation_analysis.jpg
+    - artifacts/eda_dir/checking_pollutants_over_period.jpg
+    - artifacts/eda_dir/count_AQIBucket.jpg
+    - artifacts/eda_dir/minimum_concentration.csv
+    - artifacts/eda_dir/maximum_concentration.csv
+    - artifacts/eda_dir/mean_concentration.csv
+    - artifacts/eda_dir/pollutants_impact.jpg
+    - artifacts/eda_dir/AQI_impact.jpg
+
+  data_preprocess:
+    cmd: python scripts/step_03_processed_data.py
+    deps:
+    - scripts/step_03_processed_data.py
+    - scripts/utils/common.py
+    - configs/config.yaml
+    - artifacts/data_dir/data.csv
+    outs:
+    - artifacts/process_local_dir/processed_data.csv
+    - artifacts/process_local_dir/checking_outliers_after_handling.jpg
+    - artifacts/model_dir/one_hot_model.pkl
+
+  train_test_split:
+    cmd: python scripts/step_04_train_test_split.py
+    deps:
+      - scripts/step_04_train_test_split.py
+      - scripts/utils/common.py
+      - artifacts/process_local_dir/processed_data.csv
+      - configs/config.yaml
+    params:
+      - train_test_split.TEST_SIZE
+      - train_test_split.RANDOM_STATE
+      - over_sample.RANDOM_STATE_OVER
+    outs:
+      - artifacts/split_data_dir/x_train.csv
+      - artifacts/split_data_dir/x_test.csv
+      - artifacts/split_data_dir/y_train.csv
+      - artifacts/split_data_dir/y_test.csv
+      - artifacts/split_data_dir/x_train_over.csv
+      - artifacts/split_data_dir/y_train_over.csv
+
+
+  model_training:
+    cmd: python scripts/step_05_model_training_and_selection.py
+    deps:
+      - scripts/step_05_model_training_and_selection.py
+      - scripts/utils/common.py
+      - artifacts/split_data_dir/x_train.csv
+      - artifacts/split_data_dir/x_test.csv
+      - artifacts/split_data_dir/y_train.csv
+      - artifacts/split_data_dir/y_test.csv
+      - artifacts/split_data_dir/x_train_over.csv
+      - artifacts/split_data_dir/y_train_over.csv
+      - configs/config.yaml
+    params:
+      - model_params.n_estimators
+      - model_params.min_samples_split
+      - model_params.max_depth
+      - model_params.max_features
+    outs:
+      - artifacts/over_regressors_scores_dir/classifier_before_oversample.csv
+      - artifacts/over_regressors_scores_dir/classifier_after_oversample.csv
+      - artifacts/over_regressors_scores_dir/regressor_before_oversample.csv
+      - artifacts/over_regressors_scores_dir/regressor_after_oversample.csv
+      - artifacts/model_dir/model.pkl
+
+  model_valuation:
+    cmd: python scripts/step_06_evaluate_model.py
+    deps:
+      - scripts/step_06_evaluate_model.py
+      - scripts/utils/common.py
+      - artifacts/model_dir/model.pkl
+      - artifacts/split_data_dir/x_test.csv
+      - configs/config.yaml
+    metrics:
+      - scores.json:
+          cache: false
+

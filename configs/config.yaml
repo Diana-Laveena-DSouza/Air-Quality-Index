@@ -1,0 +1,41 @@
+# It contains all the configs required in the project
+
+url_source: 'https://drive.google.com/file/d/1V_fLS3Bq_2C7Pp9Y47A04F5Gw5vAKh8h/view?usp=sharing'
+path_source: 'https://drive.google.com/uc?export=download&id='
+artifacts:
+  ARTIFACTS_DIR: artifacts
+  GET_DATA_DIR: data_dir
+  GET_DATA_FILE: data.csv
+  PROCESS_LOCAL_DIR: process_local_dir
+  SPLIT_DATA_DIR: split_data_dir
+  EDA_DIR: eda_dir
+  OVER_REG_SCORES_DIR: over_regressors_scores_dir
+  MISS_COL: missing_cols_values.csv
+  MISS_ROW: missing_rows_values.csv
+  DIS_STAT: descriptive_statistics.csv
+  DIST_IMAGE: data_distribution.jpg
+  CHECK_OUTLIERS: checking_outliers.jpg
+  CORR_IMAGE: correlation_analysis.jpg
+  POLL_PERIOD: checking_pollutants_over_period.jpg
+  COUNT_AQIB: count_AQIBucket.jpg
+  MIN_CONC: minimum_concentration.csv
+  MAX_CONC: maximum_concentration.csv
+  MEAN_CONC: mean_concentration.csv
+  POLLUTANT_IMPACT: pollutants_impact.jpg
+  AQI_IMPACT: AQI_impact.jpg
+  OUTLIERS_AFTER_HANDLING: checking_outliers_after_handling.jpg
+  PROCESS_DATA: processed_data.csv
+  X_TRAIN: x_train.csv
+  X_TEST: x_test.csv
+  Y_TRAIN: y_train.csv
+  Y_TEST: y_test.csv
+  X_TRAIN_OVER: x_train_over.csv
+  Y_TRAIN_OVER: y_train_over.csv
+  CLASS_BEFORE: classifier_before_oversample.csv
+  CLASS_AFTER: classifier_after_oversample.csv
+  REG_BEFORE: regressor_before_oversample.csv
+  REG_AFTER: regressor_after_oversample.csv
+  MODEL_DIR: model_dir
+  MODEL_NAME: model.pkl
+  ONE_HOT_MODEL: one_hot_model.pkl
+scores: scores.json
